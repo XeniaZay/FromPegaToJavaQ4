@@ -4,16 +4,31 @@ import java.io.*;
 public class TryBufferedOutputStream {
     public static void main(String[] args) {
 
-        String text = "Hello world!"; // строка для записи
-        try(FileOutputStream out=new FileOutputStream("notes.txt");
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            FileOutputStream out = new FileOutputStream("task6.txt");
             BufferedOutputStream bos = new BufferedOutputStream(out))
         {
+            System.out.print("Введите количество N, затем N целых оценок (0–100) и строку-комментарий ");
+            String info = reader.readLine();
             // перевод строки в байты
-            byte[] buffer = text.getBytes();
+            byte[] buffer = info.getBytes();
             bos.write(buffer, 0, buffer.length);
         }
         catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
 
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            FileOutputStream out = new FileOutputStream("task6.txt");
+            BufferedOutputStream bos = new BufferedOutputStream(out))
+        {
+            System.out.print("Введите количество N, затем N целых оценок (0–100) и строку-комментарий ");
+            String info = reader.readLine();
+            // перевод строки в байты
+            byte[] buffer = info.getBytes();
+            bos.write(buffer, 0, buffer.length);
+        }
+        catch(IOException ex){
             System.out.println(ex.getMessage());
         }
     }

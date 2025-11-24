@@ -4,7 +4,7 @@ import java.io.File;
 public class TryFilePath {
     public static void main(String[] args) {
         //какой-то текущий файл
-        File originalFile = new File("C:/Users/U_M1T5P/IntelliJ IDEA/FromPgToJvQ3/notes.txt");
+        File originalFile = new File("C:/Users/U_M1T5P/IntelliJ IDEA/FromPgToJvQ3/notes3.txt");
         //System.out.println(originalFile.isDirectory());
 
 //объект-директория
